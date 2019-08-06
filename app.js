@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
-const logger = require('logger');
+const morgan = require('morgan')
 const bodyParser = require('body-parser');
 
-const apiRouter = require('../routes/serchBand');
+const apiRouter = require('./routes/serchBand');
 
-app.use(logger('dev'), {});
+app.use(morgan('dev'));
 app.use(bodyParser.json());
 
 app.use('/api', apiRouter);

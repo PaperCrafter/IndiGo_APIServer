@@ -35,3 +35,5 @@ router.get('./search:name', ()=>{
 
     res.status(200).send(responseBody);
 });
+
+module.exports = router;

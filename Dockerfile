@@ -1,4 +1,4 @@
-From ubuntu
+From node:10
 
 LABEL maintainer "ukovdev@gmail.com"
 

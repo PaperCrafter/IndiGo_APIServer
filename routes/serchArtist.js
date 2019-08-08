@@ -1,14 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
-router.post('', ()=>{
+router.post('', (req,res)=>{
     const responseBody = {
         version: "2.0",
         template: {
         outputs: [
             {
             simpleText: {
-                text: "hello I'm Ryan"
+                text: "hi kakao"
             }
             }
         ]
@@ -19,14 +19,14 @@ router.post('', ()=>{
 });
 
 
-router.get('./search:name', ()=>{
+router.get('/search:name', (req,res)=>{
     const responseBody = {
         version: "2.0",
         template: {
         outputs: [
             {
             simpleText: {
-                text: "hello I'm Ryan"
+                text: "hello kakao"
             }
             }
         ]
@@ -35,5 +35,23 @@ router.get('./search:name', ()=>{
 
     res.status(200).send(responseBody);
 });
+
+router.get('/', (req, res)=>{
+    const responseBody = {
+        version: "2.0",
+        template: {
+        outputs: [
+            {
+            simpleText: {
+                text: "hello kakao"
+            }
+            }
+        ]
+        }
+    }
+
+    res.status(200).send(responseBody);
+});
+
 
 module.exports = router;

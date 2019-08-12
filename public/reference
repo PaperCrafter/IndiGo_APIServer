@@ -1,0 +1,32 @@
+/* 스킬 데이터 (request)페이로드. 구현시 참고
+{
+ "userRequest": {
+    "timezone": "Asia/Seoul",
+    "params": {},
+    "block": {
+      "id": "<블록 id>",
+      "name": "<블록 이름>"
+    },
+    "utterance": "<사용자 발화>",
+    "lang": "kr",
+    "user": {
+      "id": "<사용자 botUserKey>",
+      "type": "botUserKey",
+      "properties": {
+        "plusfriendUserKey": "<플러스 친구 사용자 id>"
+      }
+    }
+  },
+  "contexts": [],
+  "bot": {
+    "id": "<봇 id>",
+    "name": "<봇 이름>"
+  },
+  "action": {
+    "name": "<스킬 이름>",
+    "clientExtra": null,
+    "params": {},
+    "id": "<스킬 id>",
+    "detailParams": {}
+  }
+}

@@ -1,7 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
-router.post('', (req,res)=>{
+const carouselFactory = require("../public/factoryOfCarousel");
+
+
+router.post('/', (req,res)=>{
+    let btnTypes = ["web", "share"]
+    var corousel = carouselFactory.FactoryOfCarousel('basic', 5, 2, btnTypes);
+
     const responseBody = {
         version: "2.0",
         template: {

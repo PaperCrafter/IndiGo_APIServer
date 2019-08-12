@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 module.exports = () => {
     function connect() {
-        mongoose.connect('mongodb://52.79.93.240:27017/ukov_dev', function(err) {
+        mongoose.connect('mongodb://13.124.87.6/ukov_dev', function(err) {
         if (err) {
             console.error('mongodb connection error', err);
         }

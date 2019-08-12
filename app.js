@@ -9,6 +9,7 @@ const serchConcert = require('./routes/serchConcert');
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
+app.use(express.static(__dirname + '/public'));
 db();
 
 app.use('/serchArtist', serchArtist);

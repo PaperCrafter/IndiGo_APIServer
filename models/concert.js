@@ -6,7 +6,9 @@ const concert = mongoose.Schema({
     url:String,
     start_date:String,
     end_date:Array,
-    crawled_date:String
+    crawled_date:String,
+    poster_png:String
+
 })
 
 module.exports = mongoose.model('concert', concert, 'concert');

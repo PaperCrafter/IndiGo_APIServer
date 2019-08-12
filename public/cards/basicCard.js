@@ -4,10 +4,6 @@ exports.basicCardFormat = function(){
     this.thumbnail= {
     imageUrl:{}
     },
-    this.profile={
-    imageUrl:"",
-    nickname:""
-    },
     this.social={
     like:"",
     comment:"",

@@ -10,7 +10,9 @@ exports.FactoryOfCarousel = function(type, cardNum, btnNum, btnTypes){
     
     card_dir = responseBody.template.outputs[0].Carousel.items;
     for(var i=0; i < cardNum; i++){
+        //add card
         card_dir.push(cardFactory.abstractCardFactory(type));
+        //add button
         card_dir[i].buttons.push(buttonFactory.abstractButtonFactory(btnTypes[0]));
         card_dir[i].buttons.push(buttonFactory.abstractButtonFactory(btnTypes[1]));
     }

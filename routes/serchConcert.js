@@ -47,8 +47,8 @@ router.post('/',(req,res)=>{
 
 
 
-router.get('/:artist',(req,res)=>{
-
+router.get('/test:artist',(req,res)=>{
+    
     Concert.find({artist_name:{'$regex': req.params.artist, '$options': 'i' }})
     .then((data) => {
         

@@ -8,8 +8,8 @@ const factoryOfCarousel = require('../public/factoryOfCarousel');
 
 
 router.post('/',(req,res)=>{
-    //const artist_requested = req.body.userRequest.utterance;
-    const artist_requested = req.body.artist;
+    const artist_requested = req.body.userRequest.utterance;
+    //const artist_requested = req.body.artist;
     console.log(artist_requested);
 
     Concert.find({artist_name:{'$regex': artist_requested, '$options': 'i' }})
@@ -25,11 +25,11 @@ router.post('/',(req,res)=>{
         data.map((concert)=>{
             //set card info
             console.log(idx);
-            carousel.template.outputs[0].Carousel.items[idx].title = concert.title;
-            carousel.template.outputs[0].Carousel.items[idx].thumbnail.imageUrl = concert.poster_png;
-            carousel.template.outputs[0].Carousel.items[idx].description = `기간 ${concert.start_date} ~ ${concert.end_date}`
+            carousel.template.outputs[0].carousel.items[idx].title = concert.title;
+            carousel.template.outputs[0].carousel.items[idx].thumbnail.imageUrl = concert.poster_png;
+            carousel.template.outputs[0].carousel.items[idx].description = `기간 ${concert.start_date} ~ ${concert.end_date}`
             //carousel.template.outputs[0].Carousel.items[idx].thumbnail.imageUrl = concert.artist_name;
-            carousel.template.outputs[0].Carousel.items[idx].buttons[0].webLinkUrl = concert.url;
+            carousel.template.outputs[0].carousel.items[idx].buttons[0].webLinkUrl = concert.url;
             //carousel.template.outputs[0].Carousel.items[idx].thumbnail.imageUrl = concert.start_date;
             //carousel.template.outputs[0].Carousel.items[idx].thumbnail.imageUrl = concert.end_date;
             idx+=1;
@@ -64,11 +64,11 @@ router.get('/test:artist',(req,res)=>{
         data.map((concert)=>{
             //set card info
             console.log(idx);
-            carousel.template.outputs[0].Carousel.items[idx].title = concert.title;
-            carousel.template.outputs[0].Carousel.items[idx].thumbnail.imageUrl = concert.poster_png;
-            carousel.template.outputs[0].Carousel.items[idx].description = `기간 ${concert.start_date} ~ ${concert.end_date}`
+            carousel.template.outputs[0].carousel.items[idx].title = concert.title;
+            carousel.template.outputs[0].carousel.items[idx].thumbnail.imageUrl = concert.poster_png;
+            carousel.template.outputs[0].carousel.items[idx].description = `기간 ${concert.start_date} ~ ${concert.end_date}`
             //carousel.template.outputs[0].Carousel.items[idx].thumbnail.imageUrl = concert.artist_name;
-            carousel.template.outputs[0].Carousel.items[idx].buttons[0].webLinkUrl = concert.url;
+            carousel.template.outputs[0].carousel.items[idx].buttons[0].webLinkUrl = concert.url;
             //carousel.template.outputs[0].Carousel.items[idx].thumbnail.imageUrl = concert.start_date;
             //carousel.template.outputs[0].Carousel.items[idx].thumbnail.imageUrl = concert.end_date;
             idx+=1;

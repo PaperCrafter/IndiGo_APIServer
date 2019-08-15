@@ -3,7 +3,7 @@ function Carousel_format_basic (){
     this.template={
         outputs:[
             {
-                Carousel: {
+                carousel: {
                     type:"basicCard",
                     items: []
                 }
@@ -17,7 +17,7 @@ function Carousel_format_comerce (){
     this.template={
         outputs:[
             {
-                Carousel: {
+                carousel: {
                     type:"commerceCard",
                     items: []
                 }

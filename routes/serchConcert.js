@@ -8,8 +8,8 @@ const factoryOfCarousel = require('../public/factoryOfCarousel');
 
 
 router.post('/',(req,res)=>{
-    const artist_requested = req.body.userRequest.utterance;
-    //const artist_requested = req.body.artist;
+    //const artist_requested = req.body.userRequest.utterance;
+    const artist_requested = req.body.artist;
     console.log(artist_requested);
 
     Concert.find({artist_name:{'$regex': artist_requested, '$options': 'i' }})
@@ -21,7 +21,7 @@ router.post('/',(req,res)=>{
 
         //console.log(data);
         let idx = 0;
-        console.log(typeof(idx));
+        //console.log(typeof(idx));
         data.map((concert)=>{
             //set card info
             console.log(idx);
@@ -34,6 +34,7 @@ router.post('/',(req,res)=>{
             //carousel.template.outputs[0].Carousel.items[idx].thumbnail.imageUrl = concert.end_date;
             idx+=1;
         });
+        //console.log(carousel);
 
         res.json(carousel);
     })

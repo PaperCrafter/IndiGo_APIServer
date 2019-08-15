@@ -9,6 +9,8 @@ const factoryOfCarousel = require('../public/factoryOfCarousel');
 
 router.post('/',(req,res)=>{
     const artist_requested = req.body.userRequest.utterance;
+    //const artist_requested = req.body.artist;
+    console.log(artist_requested);
 
     Concert.find({artist_name:{'$regex': artist_requested, '$options': 'i' }})
     .then((data) => {
@@ -40,7 +42,7 @@ router.post('/',(req,res)=>{
         next(err);
     })
 
-    res.status(200).send(responseBody);
+    //res.status(200).send(responseBody);
 });
 
 

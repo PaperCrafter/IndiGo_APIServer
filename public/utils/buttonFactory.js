@@ -22,9 +22,17 @@ function ShareButton(){
 
 function WebButton(){
     this.action="webLink",
-    this.label="예매하기",
+    this.label,
     this.webLinkUrl
 }
+
+function webCalendarButton(){
+    this.action="webLink",
+    this.label="달력으로 보기",
+    this.webLinkUrl
+}
+
+
 
 exports.abstractButtonFactory = function(type){
     switch(type){
@@ -36,6 +44,8 @@ exports.abstractButtonFactory = function(type){
             return new ShareButton();
         case "web":
             return new WebButton();
+        case "webCalendar":
+            return new webCalendarButton();
         default:
             return new Normalbutton();
     }

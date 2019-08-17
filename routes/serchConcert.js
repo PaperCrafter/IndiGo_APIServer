@@ -4,9 +4,10 @@ const router = express.Router();
 const Concert = require('../models/concert');
 const buttonFactory = require('../public/utils/buttonFactory');
 const thumbnail = require('../public/utils/thumbnailsFormat');
-const factoryOfCarousel = require('../public/factoryOfCarousel');
+const factoryOfCarousel = require('../public/carousel/factoryOfCarousel');
 
 
+//일정검색
 router.post('/',(req,res)=>{
     const artist_requested = req.body.userRequest.utterance;
     //const artist_requested = req.body.artist;
@@ -14,10 +15,12 @@ router.post('/',(req,res)=>{
 
     Concert.find({artist_name:{'$regex': artist_requested, '$options': 'i' }})
     .then((data) => {
-        let btnTypes = ["web", "share"];
-        //console.log(data.length);
-        let cardNumber = data.length;
-        let carousel = factoryOfCarousel.FactoryOfCarousel('basic', cardNumber, 2, btnTypes);
+        const cardNumber = data.length;
+        const cardType= 'basicCard';
+        const btnNumber = 2;
+        const btnTypes = ["web", "share"];
+
+        let carousel = factoryOfCarousel.FactoryOfCarousel(cardType, cardNumber, btnNumber, btnTypes);
 
         //console.log(data);
         let idx = 0;
@@ -47,7 +50,9 @@ router.post('/',(req,res)=>{
 });
 
 
+//공연구독
 
+/*
 router.get('/test:artist',(req,res)=>{
     
     Concert.find({artist_name:{'$regex': req.params.artist, '$options': 'i' }})
@@ -56,7 +61,7 @@ router.get('/test:artist',(req,res)=>{
         let btnTypes = ["web", "share"];
         //console.log(data.length);
         let cardNumber = data.length;
-        let carousel = factoryOfCarousel.FactoryOfCarousel('basic', cardNumber, 2, btnTypes);
+        let carousel = factoryOfCarousel.FactoryOfCarousel('basic', cardNumber, btnTypes.length, btnTypes);
 
         //console.log(data);
         let idx = 0;
@@ -81,5 +86,6 @@ router.get('/test:artist',(req,res)=>{
         next(err);
     })
 });
+*/
 
 module.exports = router;

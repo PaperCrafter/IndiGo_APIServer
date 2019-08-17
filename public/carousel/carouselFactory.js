@@ -26,6 +26,7 @@ function Carousel_format_comerce (){
     }
 }
 
+
 exports.carouselFactory = function(type){
     switch(type){
         case "basic":

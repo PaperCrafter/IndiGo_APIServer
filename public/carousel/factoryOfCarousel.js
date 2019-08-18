@@ -1,7 +1,6 @@
-let carousel = require("./carouselFactory");
-let cardFactory = require("./cards/cardFactory");
-let buttonFactory = require("./utils/buttonFactory");
-let thumbnail = require("./utils/thumbnailsFormat");
+const carousel = require("./carouselFactory");
+const cardFactory = require("../utils/cards/cardFactory");
+const buttonFactory = require("../utils/buttonFactory");
 
 
 exports.FactoryOfCarousel = function(type, cardNum, btnNum, btnTypes){
@@ -12,6 +11,7 @@ exports.FactoryOfCarousel = function(type, cardNum, btnNum, btnTypes){
     for(var i=0; i < cardNum; i++){
         //add card
         card_dir.push(cardFactory.abstractCardFactory(type));
+        console.log(card_dir);
         //add button
         for(var j = 0; j < btnNum; j++){
             card_dir[i].buttons.push(buttonFactory.abstractButtonFactory(btnTypes[j]));

@@ -3,9 +3,9 @@ const commerceCard = require("./commerceCard");
 
 exports.abstractCardFactory = function(type){
     switch(type){
-        case "basicCard":
+        case "basic":
             return new basicCard.basicCardFormat();
-        case "commerceCard":
+        case "commerce":
             return new commerceCard.commerceCard();
     }
 };

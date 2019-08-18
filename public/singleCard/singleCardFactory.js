@@ -2,7 +2,7 @@ function singleCardBasic(){
     {
         this.version= "2.0",
         this.template= {
-            outputs=[
+            outputs:[
                     {
                     basicCard: {
                         
@@ -17,7 +17,7 @@ function singleCardCommerce(){
     {
         this.version= "2.0",
         this.template= {
-            outputs=[
+            outputs:[
                 {
                     commerceCard:{
                         

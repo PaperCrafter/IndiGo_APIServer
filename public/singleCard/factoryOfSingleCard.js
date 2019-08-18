@@ -8,10 +8,10 @@ exports.factoryOfSingleCard = function(type, btnNum, btnTypes){
     let btnData;
 
     if(type == 'basic'){
-        cardData.basicCard = cardFactory.abstractCardFactory(type);
+        cardData['basicCard'] = cardFactory.abstractCardFactory(type);
         btnData = cardData.basicCard.buttons;
     }else if(type =='commerce'){
-        cardData.commerceCard = cardFactory.abstractCardFactory(type);
+        cardData['commerceCard'] = cardFactory.abstractCardFactory(type);
         btnData = cardData.commerceCard.buttons;
     }
 

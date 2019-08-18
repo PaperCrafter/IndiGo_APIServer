@@ -3,20 +3,19 @@ const router = express.Router();
 
 const Concert = require('../models/concert');
 const buttonFactory = require('../public/utils/buttonFactory');
-const thumbnail = require('../public/utils/thumbnailsFormat');
 const factoryOfCarousel = require('../public/carousel/factoryOfCarousel');
 
 
 //일정검색
 router.post('/',(req,res)=>{
-    const artist_requested = req.body.userRequest.utterance;
+    //const artist_requested = req.body.userRequest.utterance;
     //const artist_requested = req.body.artist;
-    console.log(artist_requested);
-
+    //console.log(artist_requested);
+    artist_requested = "adoy";
     Concert.find({artist_name:{'$regex': artist_requested, '$options': 'i' }})
     .then((data) => {
         const cardNumber = data.length;
-        const cardType= 'basicCard';
+        const cardType= 'basic';
         const btnNumber = 2;
         const btnTypes = ["web", "share"];
 

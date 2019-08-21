@@ -7,9 +7,9 @@ const factoryOfSingleCard = require('../public/singleCard/factoryOfSingleCard');
 
 //달력보기
 router.post('/',(req,res)=>{
-    //const artist_requested = req.body.userRequest.utterance;
+    const artist_requested = req.body.userRequest.utterance;
     //const artist_requested = req.body.artist;
-    const artist_requested = 'adoy';
+
     console.log(artist_requested);
 
     Calendar.find({artist_name:{'$regex': artist_requested, '$options': 'i' }})
@@ -34,6 +34,7 @@ router.post('/',(req,res)=>{
         data.map((calendar)=>{
             calendar.image_url
         })*/
+
         console.log(singleCard);
         cardType = cardType + 'Card';
         singleCard.template.outputs[0][cardType].description = "공연일정을 달력으로 보시겠습니까?"
@@ -50,7 +51,6 @@ router.post('/',(req,res)=>{
         console.log(err);
         next(err);
     })
-
     //res.status(200).send(responseBody);
 });
 

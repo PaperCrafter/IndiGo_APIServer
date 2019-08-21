@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 const db = require('./models/db.js');
 const searchSchedule = require('./routes/searchSchedule');
 const searchConcert = require('./routes/searchConcert');
-//const subscribeArtist = require('./routes/subscribeArtist');
+const subscribeArtist = require('./routes/subscribeArtist');
 
 const app = express();
 
@@ -17,7 +17,7 @@ db();
 
 app.use('/searchConcert', searchConcert);
 app.use('/searchSchedule', searchSchedule);
-//app.use('/subscribeArtist', subscribeArtist);
+app.use('/subscribeArtist', subscribeArtist);
 
 app.get('/', (req, res)=>{
     res.send('index.html');

@@ -164,7 +164,7 @@ router.post('/addConfirm', (req, res) => {
                         const simpletext = new simpleText.simpleText(`${artist_requested}가 구독목록에서 추가되었습니다.`);
                         res.json(simpletext);
                     }).catch(()=>{
-                        console.log('구독목록에서 제거하기가 실패하였습니다.');
+                        console.log('구독목록에 추가할 수 없습니다.');
                     });
                 }
             });
@@ -191,6 +191,7 @@ router.post('/read', (req, res) => {
              QuickReplyData.template.quickReplies[idx].messageText = singer;
              idx = idx + 1;
          });
+
          res.json(QuickReplyData);
      })
 });

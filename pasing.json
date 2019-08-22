@@ -1,0 +1,24 @@
+{
+    "version":"2.0",
+    "template":{
+        "outputs":[
+            {"simpleText":
+                {"text":"일정을 열람하실 가수를 선택해 주세요"}
+            }
+        ],
+        "quickReplies":[
+            {"action":"message",
+                "lable":"볼빨간사춘기",
+                "messageText":"볼빨간사춘기"
+            },
+            {"action":"message",
+                "lable":"딥플로우",
+                "messageText":"딥플로우"
+            },
+            {"action":"message",
+                "lable":"adoy",
+                "messageText":"adoy"
+            }
+        ]
+    }
+}

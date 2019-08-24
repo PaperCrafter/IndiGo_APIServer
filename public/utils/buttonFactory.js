@@ -22,7 +22,7 @@ function ShareButton(){
 
 function WebButton(){
     this.action="webLink",
-    this.label,
+    this.label ="예매하기",
     this.webLinkUrl
 }
 

@@ -118,7 +118,7 @@ router.post('/add', (req, res) => {
 router.post('/addConfirm', (req, res) => {
     const artist_requested = req.body.userRequest.utterance;
     const user_key = req.body.userRequest.user.id;
-    //const artist_requested = req.body.artist;
+    //let artist_requested = req.body.artist;
     //const user_key = req.body.user;
     
     Artist.find({artist_name:{'$regex': artist_requested, '$options': 'i' }}).then((result)=>{

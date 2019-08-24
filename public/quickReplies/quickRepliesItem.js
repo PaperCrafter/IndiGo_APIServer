@@ -3,6 +3,6 @@ exports.item = function(quickRepliesItemFormat){
     {
         this.messageText="",
         this.action=quickRepliesItemFormat,
-        this.lable=""
+        this.label=""
     }
 }

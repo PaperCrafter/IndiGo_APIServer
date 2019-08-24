@@ -24,11 +24,11 @@ router.post('/deleteList', (req,res)=>{
     User.find({'user_key':user_key}).then((subscribedList)=>{
         //console.log(subscribedList.subscribed_artist_list);
         QuickReplyData = FacoryOfQuickReplies.quickRepliesFactory(subscribedList[0].subscribed_artist_list.length, quickRepliesItemFormat);
-        QuickReplyData.template.outputs[0].simpleText.text = "일정을 열람하실 가수를 선택해 주세요";
+        QuickReplyData.template.outputs[0].simpleText.text = "구독을 취소하실 가수를 선택해 주세요";
         let idx = 0;
 
         subscribedList[0].subscribed_artist_list.map((singer) => {
-            QuickReplyData.template.quickReplies[idx].lable = singer;
+            QuickReplyData.template.quickReplies[idx].label = singer;
             QuickReplyData.template.quickReplies[idx].messageText = singer;
             idx = idx + 1;
         });
@@ -187,7 +187,7 @@ router.post('/read', (req, res) => {
          let idx = 0;
  
          subscribedList[0].subscribed_artist_list.map((singer) => {
-             QuickReplyData.template.quickReplies[idx].lable = singer;
+             QuickReplyData.template.quickReplies[idx].label = singer;
              QuickReplyData.template.quickReplies[idx].messageText = singer;
              idx = idx + 1;
          });
@@ -195,6 +195,7 @@ router.post('/read', (req, res) => {
          res.json(QuickReplyData);
      })
 });
+
 
 //구독 열람 // 완료
 //reading list of artist user subscribed
